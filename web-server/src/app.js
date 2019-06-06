@@ -6,6 +6,8 @@ const forecast = require('./utils/forecast')
 
 const app = express()
 
+console.log(__dirname)
+
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -22,14 +24,14 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Shreyas'
+        name: 'Deepak, Jesin, Shreyas and Srini'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        name: 'Shreyas'
+        name: 'Deepak, Jesin, Shreyas and Srini'
     })
 })
 
@@ -37,7 +39,7 @@ app.get('/help', (req, res) => {
     res.render('help', {
         helpText: 'This is some helpful text.',
         title: 'Help',
-        name: 'Shreyas'
+        name: 'Deepak, Jesin, Shreyas and Srini'
     })
 })
 
@@ -48,12 +50,15 @@ app.get('/weather', (req, res) => {
         })
     }
 
+
     geocode(req.query.address, (error, { latitude, longitude, location } = {} ) => {
         if (error) {
             return res.send({ error })
         }
 
-        forecast(latitude, longitude, (error, forecastData) => {
+        forecast(latitude, longitude, req.query.units, (error, forecastData) => {
+            console.log("Shreyas")
+            console.log(req.query.units)
             if (error) {
                 return res.send({ error })
             }
@@ -70,7 +75,7 @@ app.get('/weather', (req, res) => {
 app.get('/help/*', (req, res) => {
     res.render('404', {
         title: '404',
-        name: 'Shreyas',
+        name: 'Deepak, Jesin, Shreyas and Srini',
         errorMessage: 'Help article not found.'
     })
 })
@@ -78,7 +83,7 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404',
-        name: 'Shreyas',
+        name: 'Deepak, Jesin, Shreyas and Srini',
         errorMessage: 'Page not found.'
     })
 })

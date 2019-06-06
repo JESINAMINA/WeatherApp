@@ -6,6 +6,7 @@
     <title>Weather</title>
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/radio.css">
 </head>
 
 <body background="/img/Weather-Blog-Image.jpg">
@@ -16,8 +17,15 @@
 
         <form>
             <input placeholder="Location" type="text"><br><br>
-            {{!-- <input type="radio" id="units" value="Celsius" checked> Celsius<br>
-            <input type="radio" id="units" value="Fahrenheit"> Fahrenheit<br><br> --}}
+            <label class="container">
+                <input type="radio" id="cel_units" name="units" value="Celsius" checked> Celsius<br>
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <input type="radio" id="fah_units" name="units" value="Fahrenheit"> Fahrenheit<br><br>
+                <span class="checkmark"></span>
+            </label>
+            
             <button id="search">Search</button>
         </form>
 

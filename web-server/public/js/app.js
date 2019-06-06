@@ -7,13 +7,15 @@ const messageTwo = document.querySelector('#message-2')
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
+    
+    const checkbox = document.querySelector('input[name = "units"]:checked').value
 
     const location = search.value
 
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('http://localhost:3000/weather?address=' + location + '&units=' + checkbox).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 messageOne.textContent = data.error

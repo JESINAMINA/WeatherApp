@@ -36,7 +36,7 @@ input[type=text]:focus {
 }
 
 footer {
-    color:#F5FFFA;
+    color:#F0E68C;
     border-top: 1px solid #eeeeee;
     margin-top: 16px;
     padding: 16px 0;
@@ -94,13 +94,9 @@ button:hover{
     color:#F5FFFA
 }
 
-input[type=radio] {
-    color: #F5FFFA
-}
 
 #message-1, #message-2 {
     font-family: "Comic Sans MS", cursive, sans-serif;
     color:#FFF8DC;
     font-weight: bold;
 }
-
