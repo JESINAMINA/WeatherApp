@@ -94,7 +94,11 @@ button:hover{
     color:#F5FFFA
 }
 
-
+#foo{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: 	#FFD700;
+    font-weight: bold;    
+}
 #message-1, #message-2 {
     font-family: "Comic Sans MS", cursive, sans-serif;
     color:#FFF8DC;
